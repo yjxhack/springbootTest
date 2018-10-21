@@ -1,5 +1,10 @@
 package com.example.service;
 
+import static org.hamcrest.CoreMatchers.describedAs;
+
+import java.nio.file.attribute.UserPrincipal;
+import java.util.List;
+
 import org.junit.validator.PublicClassValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,8 +27,27 @@ public class UserServiceImpl implements  UserService{
 		
 		
 	}
-	
-	
+	@Override
+	public Boolean  isUserEntity(String username ) {
+		
+		boolean is =false;
+		
+	   List<String>  list = userMapper.getallString();
+	   System.out.println(list.size());
+	   for (String  param : list) {
+		   
+		   if(username.equals(param)) {
+		    System.out.println(param);
+		     is = true;
+			  
+			  
+		   }
+		   
+	}
+		
+		return  is;
+		
+	}
 	
 	
 	

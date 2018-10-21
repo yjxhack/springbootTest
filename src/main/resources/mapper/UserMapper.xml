@@ -25,7 +25,10 @@
 	   FROM  userentity
 	   WHERE id = #{id}
     </select>
- 
+    <select id="getallString"  resultType="java.lang.String">
+      select  user_name
+      from userentity
+    </select>
     <insert id="insert" parameterType="com.example.bean.UserEntity" >
        INSERT INTO 
        		userentity
@@ -51,5 +54,11 @@
        WHERE 
        		 id =#{id}
     </delete>
- 
+    
+     <select id="getAllByCount"   resultType="map">
+      SELECT  user_name,"count"(*) 
+      FROM "public"."userentity" 
+       WHERE user_name in ('1','2','3')
+      GROUP BY user_name 
+    </select>
 </mapper>

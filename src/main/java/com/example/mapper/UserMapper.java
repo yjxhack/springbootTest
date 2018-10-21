@@ -1,6 +1,7 @@
 package com.example.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -18,4 +19,8 @@ public interface UserMapper {
 	void update(UserEntity user);
  
 	void delete(Integer id);
-}
+	
+	List<String>  getallString();
+	
+    List<Map<String, Object>> getAllByCount();
+} 
