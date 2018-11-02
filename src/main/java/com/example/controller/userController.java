@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.validator.PublicClassValidator;
@@ -58,13 +59,31 @@ public class userController {
 	
    @RequestMapping("/list")
    @ResponseBody
-   public Map<String,Integer> getaddByUserSex(){
+   public Map<String,Long> getaddByUserSex(){
 	   
+	 
 	  System.out.println(userTjMapper.getAllByUserSex()); 
 	  System.out.println(userTjMapper.getAllByUserSex().size());
-	  System.out.println(userTjMapper.getAllByUserSex().get("nv"));
+	  System.out.println(userTjMapper.getAllByUserSex().get("nv").getClass().getName());
 	  return   userTjMapper.getAllByUserSex();
 	   
+	  
+	  
+	 
+   }
+	
+   
+   @RequestMapping("/list/test")
+   @ResponseBody
+   public Map<String,Integer> getaddByUserTest(){
+	   
+	 Map<String, Integer>  map = new HashMap<String, Integer>();
+	 map.put("123", 12312);
+	  return   map;
+	   
+	  
+	  
+	 
    }
    
    

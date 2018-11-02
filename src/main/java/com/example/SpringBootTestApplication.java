@@ -11,7 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @MapperScan("com.example.mapper")
 @EnableSwagger2
 public class SpringBootTestApplication {
-
+             
 	public static void main(String[] args) {
 		
 		SpringApplication.run(SpringBootTestApplication.class, args);
