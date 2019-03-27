@@ -1,7 +1,10 @@
 package com.example.bean;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 
- 
+
+@TableName("user_entity")
 public class UserEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;
@@ -9,8 +12,8 @@ public class UserEntity implements Serializable {
 	private String passWord;
 	private String userSex;
 	private String nickName;
-	
-	
+
+
 	public int getId() {
 		return id;
 	}
@@ -41,6 +44,6 @@ public class UserEntity implements Serializable {
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
- 
-	
+
+
 }

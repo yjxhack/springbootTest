@@ -2,18 +2,16 @@ package com.example.bean;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
-@Data
+
 @TableName("user_infomation")
 public class UserInformation {
-	
+
      private Long id;
      private String name;
      private  Integer age;
      private String email;
+
 	public Long getId() {
 		return id;
 	}
@@ -38,9 +36,6 @@ public class UserInformation {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-     
-     
-     
-     
+
 
 }

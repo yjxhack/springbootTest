@@ -2,17 +2,15 @@ package com.example.handle;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 
 
 public class LoginInterCeptor  implements   HandlerInterceptor {
-	
-	
-	
+
+
+
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
@@ -20,8 +18,8 @@ public class LoginInterCeptor  implements   HandlerInterceptor {
 		// TODO Auto-generated method stub
 		System.out.println("------------------"+"拦截之前的操作"+"------------------------");
 	//	return HandlerInterceptor.super.preHandle(request, response, handler);
-		
-		
+
+
 		return true;
 	}
 
@@ -37,12 +35,12 @@ public class LoginInterCeptor  implements   HandlerInterceptor {
 			throws Exception {
 		// TODO Auto-generated method stub
 		//HandlerInterceptor.super.afterCompletion(request, response, handler, ex);
-		
+
 		System.out.println("------------------"+"处理完视图之后的操作"+"------------------------");
 	}
-	 
-	 
-	 
-	 
+
+
+
+
 
 }

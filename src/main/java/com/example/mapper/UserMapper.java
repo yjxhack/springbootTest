@@ -3,24 +3,14 @@ package com.example.mapper;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.ibatis.annotations.Mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.bean.UserEntity;
+import org.apache.ibatis.annotations.Mapper;
 
 
 @Mapper
-public interface UserMapper {
-	List<UserEntity> getAll();
-	
-	UserEntity getOne(Integer id);
- 
-	void insert(UserEntity user);
- 
-	void update(UserEntity user);
- 
-	void delete(Integer id);
-	
-	List<String>  getallString();
-	
-    List<Map<String, Object>> getAllByCount();
-} 
+public interface UserMapper extends BaseMapper<UserEntity>{
+
+}
+
