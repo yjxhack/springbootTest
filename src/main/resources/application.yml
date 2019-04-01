@@ -11,33 +11,41 @@ spring:
     database: 3
     host: localhost
     port: 6379
-    password:    # 密码（默认为空）
-    timeout: 6000ms  # 连接超时时长（毫秒）
+    password:
+    timeout: 6000ms
 
 
   mybatis:
-     executor-type: simple  #指定mybatis的执行器
-     check-config-location: false    #启动时检测xml文件是否存在（默认不检测）
-     config-locations: classpath:mybatis/mybatis-config.xml
-     mapper-locations: classpath:mapper/*.xml     #mapper 额外的xml指定的位置
-     type-aliases-package: com.example.bean
-     type-enums-package: com.example.enums       #枚举扫描路径
-     configuration:       #枚举配置
-       default-enum-type-handler: org.apache.ibatis.type.EnumTypeHandler    #默认将枚举的值保存到数据库中
+    executor-type: simple
+    check-config-location: false
+    config-locations: classpath:mybatis/mybatis-config.xml
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.example.bean
+    type-enums-package: com.example.enums
+    configuration:
+      default-enum-type-handler: org.apache.ibatis.type.EnumTypeHandler
 
 
   cache:
     redis:
-      time-to-live: 3600000ms #过期时间，默认为永不过期，这里配置为过期时间 60分钟 60*60*1000
-
+      time-to-live: 3600000ms
 
 
 springbootTest:
   redis:
-    open: true  # 是否开启redis缓存  true开启   false关闭
+    open: true
+
   shiro:
-      redis: true # true表示shiro session存到redis里，需要开启redis，才会生效，集群环境下使用
+    redis: true
+    expireIn: 1800
+    sessionTimeout: 1800000
+    cookieTimeout: 2592000
+    anonUrl: /css/**,/js/**,/fonts/**,/adminres/**,/img/**
+    loginUrl: /login
+    successUrl: /admin/index
+    logoutUrl: /logout
+    unauthorizedUrl: /error
+    sessionIdName: hayek.session.id
 
-
-server:   #tomcat服务器开启端口8080
-    port: 8080
+server:
+  port: 8080
